@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       routerConfig: GoRouter(routes: [
         GoRoute(
           path: '/',
-          builder: (context, state) => const ConsolationJudgePage(),
+          builder: (context, state) => const HomePage(),
         ),
         GoRoute(
           path: '/consolation_judge',
