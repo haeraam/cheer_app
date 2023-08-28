@@ -26,21 +26,53 @@ class MyApp extends StatelessWidget {
       routerConfig: GoRouter(routes: [
         GoRoute(
           path: '/',
-          builder: (context, state) => const HomePage(),
+          pageBuilder: (context, state) => buildPageWithDefaultTransition(
+            context: context,
+            state: state,
+            child: const HomePage(),
+          ),
         ),
         GoRoute(
           path: '/consolation_judge',
-          builder: (context, state) => const ConsolationJudgePage(),
+          pageBuilder: (context, state) => buildPageWithDefaultTransition(
+            context: context,
+            state: state,
+            child: const ConsolationJudgePage(),
+          ),
         ),
         GoRoute(
           path: '/choice',
-          builder: (context, state) => const ChoicePage(),
+          pageBuilder: (context, state) => buildPageWithDefaultTransition(
+            context: context,
+            state: state,
+            child: const ChoicePage(),
+          ),
         ),
         GoRoute(
           path: '/consolation',
-          builder: (context, state) => const ConsolationPage(),
+          pageBuilder: (context, state) => buildPageWithDefaultTransition(
+            context: context,
+            state: state,
+            child: const ConsolationPage(),
+          ),
         ),
       ]),
     );
   }
+}
+
+CustomTransitionPage buildPageWithDefaultTransition<T>({
+  required BuildContext context,
+  required GoRouterState state,
+  required Widget child,
+}) {
+  return CustomTransitionPage<T>(
+    transitionDuration: Duration(milliseconds: 200),
+    key: state.pageKey,
+    child: child,
+    transitionsBuilder: (context, animation, secondaryAnimation, child) => FadeTransition(
+      opacity: animation,
+      child: child,
+    ),
+  );
 }

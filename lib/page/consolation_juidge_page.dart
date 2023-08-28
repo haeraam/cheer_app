@@ -57,7 +57,7 @@ class _ConsolationJudgePageState extends State<ConsolationJudgePage> {
                     testList[testindex],
                     style: const TextStyle(
                       color: Color(0xFF40628E),
-                      fontSize: 24,
+                      fontSize: 20,
                       fontWeight: FontWeight.w200,
                     ),
                   ),
@@ -111,7 +111,7 @@ class _ConsolationJudgePageState extends State<ConsolationJudgePage> {
                     '위로받기',
                     style: TextStyle(
                       color: Color(0xFF40628E),
-                      fontSize: 28,
+                      fontSize: 24,
                       fontWeight: FontWeight.w200,
                     ),
                   ),
