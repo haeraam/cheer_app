@@ -11,18 +11,21 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Wrapper(
       child: Center(
-        child: ClayBox(
-          onPressed: () {
-            context.go('/choice');
-          },
-          width: 190,
-          height: 75,
-          child:  Text(
-            '위로받기',
-            style: GoogleFonts.roboto().copyWith(
-              color: Color(0xFF40628E),
-              fontSize: 24,
-              fontWeight: FontWeight.w200,
+        child: Padding(
+          padding: const EdgeInsets.only(bottom: 150),
+          child: ClayBox(
+            onPressed: () {
+              context.go('/choice');
+            },
+            width: 190,
+            height: 75,
+            child: Text(
+              '위로받기',
+              style: GoogleFonts.roboto().copyWith(
+                color: const Color(0xFF40628E),
+                fontSize: 24,
+                fontWeight: FontWeight.w200,
+              ),
             ),
           ),
         ),

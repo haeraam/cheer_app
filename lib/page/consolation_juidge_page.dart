@@ -13,6 +13,7 @@ class ConsolationJudgePage extends StatefulWidget {
 }
 
 class _ConsolationJudgePageState extends State<ConsolationJudgePage> {
+  Timer? _timer;
   bool? isGood;
   List testList = [
     "너는 최고야",
@@ -28,11 +29,19 @@ class _ConsolationJudgePageState extends State<ConsolationJudgePage> {
   int testindex = 0;
 
   _reset() {
-    Timer(const Duration(seconds: 1), () {
+    _timer = Timer(const Duration(milliseconds: 300), () {
       isGood = null;
       testindex = Random().nextInt(testList.length);
-      setState(() {});
+      if (context.mounted) setState(() {});
     });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    if (_timer != null) {
+      _timer!.cancel();
+    }
   }
 
   @override

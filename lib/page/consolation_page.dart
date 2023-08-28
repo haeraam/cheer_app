@@ -17,7 +17,6 @@ class ConsolationPage extends StatelessWidget {
             Expanded(child: Container()),
             ClayBox(
               onPressed: () {
-                context.go('/choice');
               },
               width: double.infinity,
               height: 300,

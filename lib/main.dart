@@ -2,6 +2,7 @@ import 'package:cheer_app/page/choice_page.dart';
 import 'package:cheer_app/page/consolation_juidge_page.dart';
 import 'package:cheer_app/page/consolation_page.dart';
 import 'package:cheer_app/page/homepage.dart';
+import 'package:cheer_app/page/mypage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
@@ -56,6 +57,14 @@ class MyApp extends StatelessWidget {
             child: const ConsolationPage(),
           ),
         ),
+        GoRoute(
+          path: '/myPage',
+          pageBuilder: (context, state) => buildPageWithDefaultTransition(
+            context: context,
+            state: state,
+            child: const MyPage(),
+          ),
+        ),
       ]),
     );
   }
@@ -67,7 +76,7 @@ CustomTransitionPage buildPageWithDefaultTransition<T>({
   required Widget child,
 }) {
   return CustomTransitionPage<T>(
-    transitionDuration: Duration(milliseconds: 200),
+    transitionDuration: const Duration(milliseconds: 340),
     key: state.pageKey,
     child: child,
     transitionsBuilder: (context, animation, secondaryAnimation, child) => FadeTransition(

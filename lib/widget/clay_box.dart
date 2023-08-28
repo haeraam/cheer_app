@@ -66,7 +66,7 @@ class _ClayBoxState extends State<ClayBox> {
           boxShadow: [
             BoxShadow(
               color: Color.fromRGBO(145, 192, 255, widget.opacity / 2),
-              offset: Offset((_width) / 15, (_height) / 15),
+              offset: Offset((_width) / 20, (_height) / 20),
               blurRadius: min(_width, _height) / 12,
               spreadRadius: 3,
             ),
@@ -80,7 +80,7 @@ class _ClayBoxState extends State<ClayBox> {
             BoxShadow(
               color: Color.fromRGBO(255, 255, 255, widget.opacity),
               offset: const Offset(0, 0),
-              blurRadius: min(_width, _height) / 15,
+              blurRadius: min(_width, _height) / 10,
               spreadRadius: 0,
               blurStyle: BlurStyle.inner,
             ),
